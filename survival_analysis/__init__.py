@@ -9,4 +9,3 @@ __version__ = "0.0.1"
 
 from . import model  # noqa : F401
 from . import visualisation  # noqa : F401
-from . import utils # noqa : F401
