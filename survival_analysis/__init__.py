@@ -7,5 +7,5 @@ A package for implementing Survival analysis algorithm for telecom companies and
 __author__ = """Armine Papikyan"""
 __version__ = "0.0.1"
 
-from . import model  # noqa : F401
-from . import visualisation  # noqa : F401
+from survival_analysis.model import *  # noqa : F401
+from survival_analysis.visualizations import * # noqa : F401
