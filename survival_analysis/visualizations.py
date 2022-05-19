@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 %matplotlib inline
 import seaborn as sns
-from survival_analysis.model.base_model import (choose_optimal_model, 
+from survival_analysis.model import (choose_optimal_model, 
                                                 data_dummy, 
                                                 get_cat)
 
