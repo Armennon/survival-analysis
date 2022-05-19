@@ -76,19 +76,19 @@ def find_aft_model(optimal_model_name, survival_df):
   aft.fit(survival_df, duration_col='tenure', event_col='churn_Yes')
   return aft
 
-pred = aft_optimal_model.predict_survival_function(survival)
 
-def get_CLV(pred, survival):
+def get_CLV(pred_, survival):
   m = 1300
   r = 0.1
-  predt = pred.T
+  predt = pred_.T
   rangee = range(0, len(predt.columns-1))
   for i in rangee:
     predt.iloc[:, i] = predt.iloc[:, i].values/(1+r/12)**(rangee[i])
   rsum = predt.sum(axis = 1)
   predt['CLV'] = m*rsum
+  survival['CLV'] = predt['CLV']
   survival['Rank'] = survival['CLV'].rank()
   survival.sort_values("CLV", ascending=False, inplace = True)
   survival.drop('Rank', axis = 1, inplace = True)
-  print('Dataframe with ranked CLV value for each customer')
+  # print('Dataframe with ranked CLV value for each customer')
   return survival
