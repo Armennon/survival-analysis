@@ -168,8 +168,8 @@ def get_CLV(pred_, survival):
         Previously dummified DataFrame.
     Returns
     -------
-    Transposed DataFrame of survival with CLV values of the customers.  
-        Fitted AFT model.
+        pandas DataFrame  
+        Transposed DataFrame of survival with CLV values of the customers.
     """
   m = 1300
   r = 0.1
